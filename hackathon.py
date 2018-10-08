@@ -129,7 +129,7 @@ def index(request):
         elif re.findall(r"^68\d{7}", str(in_message)):
             link2script = 'https://scripts.cisco.com/ui/use/SR_Checker?SR_info='+in_message+'&autorun=true'
             bdb_client = bdbclientv2.BDBClient(username="sivaksiv", password="password")
-            bdb_client.task_run('Q_manager_test', inputs= {"user": "ajshende","wg":"test"})
+            bdb_client.task_run('Q_manager_test', inputs= {"user": "ajshende","wg":"test1"})
             result1 = bdb_client.task_run('SR_Checker', inputs= {"SR_Info": sr,"user_id": user_id})
             reg = re.search(r'<pre>.*<\/pre>',str(result1))
             msg = str(reg.group())
